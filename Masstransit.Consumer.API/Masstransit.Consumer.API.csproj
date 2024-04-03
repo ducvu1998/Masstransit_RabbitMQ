@@ -19,9 +19,4 @@
     <ProjectReference Include="..\Masstransit.Contract\Masstransit.Contract.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="MessageBus\Consumers\Commands\" />
-    <Folder Include="Usecases\Commands\" />
-  </ItemGroup>
-
 </Project>

@@ -23,6 +23,7 @@ namespace Masstransit.Producer.API.Controllers
         public async Task<IActionResult> PublishSmsNoitification()
         {
             //_logger.
+          //  _publishEndpoint.Publish
             await _publishEndpoint.Publish(new DomainEvent.SmsNotificationEvent()
             {
                 Id= Guid.NewGuid(),
@@ -30,7 +31,7 @@ namespace Masstransit.Producer.API.Controllers
                 Name= "sms noitification",
                 Timestamp = DateTime.Now,
                 TransactionId=Guid.NewGuid(),
-                Type= NoitificationType.sms
+                Type= NoitificationType.email
             }
            );
             return Accepted();

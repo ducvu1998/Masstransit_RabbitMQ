@@ -1,4 +1,5 @@
 ﻿using Masstransit.Contract.Abstractions.Messages;
+using MassTransit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,16 @@ namespace Masstransit.Contract.IntegartionEvents
             public string Type { get; set; }
             public Guid TransactionId { get; set; }
         }
+        [ExcludeFromTopology]
+        public record CreateMemberCommand : INoitificationEvent
+        {
+            public Guid Id { get; set; }
+            public DateTimeOffset Timestamp { get; set; }
+            public string Name { get; set; }
+            public string Description { get; set; }
+            public Guid TransactionId { get; set; }
+        }
+
     }
 }
 //using Masstransit.Contract.Abtractions.Messages;
